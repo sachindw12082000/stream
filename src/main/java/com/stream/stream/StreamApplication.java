@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.sql.SQLOutput;
 import java.util.*;
 import java.time.LocalDate;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @SpringBootApplication
 public class StreamApplication {
@@ -101,6 +103,59 @@ public class StreamApplication {
         System.out.println(collect6);
         // Get names of employees with salary between 30k–60k
         List<Employee> list5 = employees.stream().filter(emp -> emp.getSalary() >= 30000 && emp.getSalary() <= 60000).toList();
-        System.out.println("filtered employee-> "+list5);
+        System.out.println("filtered employee-> " + list5);
+        //or
+        List<Employee> list6 = employees.stream().filter(((Predicate<Employee>) emp -> emp.getSalary() >= 30000).and((Predicate<Employee>) emp -> emp.getSalary() <= 60000)).toList();
+        System.out.println(list6);
+
+        //Convert names to uppercase list
+        List<Employee> list7 = employees.stream().map(emp -> new Employee(emp.getId(), emp.getName().toUpperCase(), emp.getDepartmentId(), emp.getDepartmentName(), emp.getSalary(), emp.getJoiningDate())).toList();
+        System.out.println(list7);
+
+
+        //Check if any employee earns > 1 lakh
+        List<Employee> collect5 = employees.stream().filter(emp -> emp.getSalary() > 100000).collect(Collectors.toList());
+        List<Employee> collect7 = employees.stream().filter(emp -> emp.getSalary() > 100000).toList();
+
+        System.out.println(collect5 + " " + collect7);
+
+        // Check if all employees belong to same department
+
+        Boolean it = employees.stream().map(Employee::getDepartmentName).distinct().count() == 1;
+        System.out.println(it);
+
+        // Find employees whose names start with 'A'
+        List<Employee> a = employees.stream().filter(emp -> emp.getName().startsWith("A")).toList();
+        System.out.println(a);
+
+        // Get employee by name using Optional Return "Not Found" if absent
+        String name = "sachin";
+        String aNull = employees.stream().filter(emp -> emp.getName().equalsIgnoreCase(name)).findFirst().map(emp -> emp.getName()).orElse("Not Found");
+        System.out.println(aNull);
+
+        //Safely get employee salary using Optional
+        //Return default if null
+        Integer i = employees.stream().map(Employee::getSalary).findFirst().orElse(null);
+        System.out.println(i);
+
+        // Comma-separated string of all employee names
+        String collect8 = employees.stream().map(Employee::getName).collect(Collectors.joining(", "));
+        System.out.println(collect8);
+
+        //Partition employees based on salary > 50,000
+        //Map<Boolean, List<Employee>>
+
+        Map<Boolean, List<Employee>> collect9 = employees.stream().collect(Collectors.partitioningBy(emp -> emp.getSalary() > 50000));
+        System.out.println(collect9);
+
+        //Get distinct department IDs as list
+
+        List<Integer> list8 = employees.stream().map(Employee::getDepartmentId).distinct().toList();
+        System.out.println(list8);
+
+        //Use method reference to print all employee names
+        employees.stream().map(Employee::getName).forEach(System.out::println);
+
     }
+
 }
