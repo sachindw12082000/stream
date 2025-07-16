@@ -1,0 +1,222 @@
+🔸 Java 8 Coding Practice Using Employee Class
+✅ Basic Stream Operations
+Print all employee names
+
+List employees with salary > 50,000
+
+Sort employees by salary (descending)
+
+Sort employees by name alphabetically
+
+Remove duplicate employees based on name
+
+✅ Grouping & Aggregation
+Group employees by department
+Map<Integer, List<Employee>>
+
+Count employees in each department
+Map<Integer, Long>
+
+Find highest-paid employee in each department
+
+Calculate average salary of all employees
+
+Find employee with the highest salary
+
+✅ Filtering and Mapping
+Get names of employees with salary between 30k–60k
+
+Convert names to uppercase list
+
+Check if any employee earns > 1 lakh
+
+Check if all employees belong to same department
+
+Find employees whose names start with 'A'
+
+✅ Advanced Stream + Optional
+Get employee by name using Optional
+Return "Not Found" if absent
+
+Safely get employee salary using Optional
+Return default if null
+
+Comma-separated string of all employee names
+
+Partition employees based on salary > 50,000
+Map<Boolean, List<Employee>>
+
+Get distinct department IDs as list
+
+✅ Method References & Constructor Reference
+Use method reference to print all employee names
+
+Create new list of employees using constructor reference
+
+✅ Parallel Stream and Performance
+Use parallel stream to count salary > 60,000
+
+Compare performance: stream() vs parallelStream()
+
+✅ Functional Interfaces
+Write Predicate<Employee> for salary > 40k
+
+Use Function<Employee, String> to extract name
+
+Use Consumer<Employee> to print details
+
+Use Supplier<Employee> for dummy employee
+
+🧠 Real-World / Advanced Scenarios
+Find second-highest salary employee
+
+Find department with maximum employees
+
+Top 3 earners in the organization
+
+Remove duplicate employees by name (keep first only)
+
+⏱️ Date & Time API
+Print joining date in dd-MM-yyyy format
+
+Count employees joined after specific date
+
+---------------------------------------------------------
+
+advance level questions 
+
+✅ Basic Stream Operations (Level 1)
+Print all employee names.
+
+Get a list of employees whose salary is greater than 50,000.
+
+Sort employees by name alphabetically.
+
+Sort employees by salary descending.
+
+Remove duplicate employees by name.
+
+Convert list of employees to a list of names.
+
+Convert list of employees to Map<id, name>.
+
+Filter employees who joined after 2021.
+
+Get all employees with department "IT".
+
+Get count of employees with salary below 40,000.
+
+✅ Intermediate: Grouping, Aggregation, Transformation (Level 2)
+Group employees by department.
+
+Count employees per department.
+
+Average salary per department.
+
+Find the department with the max employees.
+
+Find the highest-paid employee in each department.
+
+List departments with average salary > 60k.
+
+Create Map<DepartmentName, List<Employee>> sorted by department name.
+
+Partition employees by salary > 60k.
+
+Find duplicate employee names.
+
+Create comma-separated string of employee names.
+
+Get summary of salaries (min, max, avg, sum, count).
+
+Join all employee names in uppercase with commas.
+
+Sort employees by department, then by name.
+
+Convert list of employee names to a Set.
+
+List employees whose names start with ‘A’.
+
+Check if any employee earns more than 1L.
+
+Check if all employees belong to the same department.
+
+Get list of departments sorted by number of employees.
+
+Get list of all unique department names.
+
+Get employee by ID using Optional (return "Unknown" if absent).
+
+✅ Advanced Use Cases (Level 3)
+Find the second-highest salary employee.
+
+Find employees with salary equal to max salary.
+
+List top 3 highest-paid employees.
+
+Get employees joined in the last 2 years.
+
+Count employees in each department with salary > 50k.
+
+Create Map<Department, Employee> with highest salary in each.
+
+Remove duplicate employees by name (keep first).
+
+Get total salary paid per department.
+
+Find youngest and oldest employee by joining date.
+
+Partition employees into before and after 2020.
+
+Convert employee list to TreeMap<DeptId, Set<EmployeeName>>.
+
+Check if any two employees have the same salary.
+
+Find all employee names sorted in reverse alphabetical order.
+
+Create Map<EmployeeName, List<Salary>> for duplicate names.
+
+Find department with lowest average salary.
+
+Convert list to LinkedHashMap with insertion order maintained.
+
+Group employee names by department into a comma-separated string.
+
+Get list of employee objects whose salary is in top 20%.
+
+Sort employees by ID but keep duplicates by name removed.
+
+Return employees with min and max salary in one pass.
+
+Create List<String> as “Alice - HR”, “Bob - Finance”.
+
+Filter and collect employee names with salary divisible by 10k.
+
+Get employee with highest salary in "HR" department.
+
+Map<EmployeeId, Employee> keeping the latest joined employee for duplicate IDs.
+
+Get distinct list of salaries in sorted order.
+
+Filter employees whose name has more than 5 characters.
+
+Find common salary among 2 different department employees.
+
+Create a Map<Year, List<Employee>> based on joining year.
+
+List employees grouped by month of joining.
+
+Print names of employees who joined on weekends.
+
+Get average salary of employees whose name starts with vowel.
+
+✅ Bonus: Functional Interface Practice
+Write a Predicate<Employee> for salary > 50,000.
+
+Use Function<Employee, String> to return “name - department”.
+
+Use Consumer<Employee> to print name and joining date.
+
+Create a Supplier<Employee> that returns a dummy employee.
+
+Chain two Consumer<Employee> using andThen().

@@ -22,6 +22,17 @@ public class Employee {
         this.joiningDate = joiningDate;
     }
 
+    public Employee(String name) {
+        this.name = name;
+    }
+
+    public Employee(Employee employee) {
+    }
+
+    public Employee() {
+
+    }
+
     // Getters & Setters
     public int getId() {
         return id;

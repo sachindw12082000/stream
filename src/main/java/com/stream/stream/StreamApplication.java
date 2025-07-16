@@ -1,13 +1,15 @@
 package com.stream.stream;
 
 import com.stream.stream.entity.Employee;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.sql.SQLOutput;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.time.LocalDate;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -156,6 +158,58 @@ public class StreamApplication {
         //Use method reference to print all employee names
         employees.stream().map(Employee::getName).forEach(System.out::println);
 
-    }
+        //Create new list of employees using constructor reference
+        List<Employee> list9 = employees.stream().map(Employee::new).toList();
+        System.out.println(list9);
 
+        //Use parallel stream to count salary > 60,000
+        List<Employee> list10 = employees.parallelStream().filter(emp -> emp.getSalary() > 50000).toList();
+        System.out.println(list10);
+
+        //Write Predicate<Employee> for salary > 40k
+        Predicate<Employee> sal = (emp) -> emp.getSalary() > 40000;
+        List<Employee> list11 = employees.stream().filter(sal).toList();
+        System.out.println(list11);
+
+        //Use Function<Employee, String> to extract name
+
+        Function<Employee, String> restring = Employee::getName;
+        List<String> list12 = employees.stream().map(restring).toList();
+        System.out.println(list12);
+
+        //Consumer<Employee> to print details
+        Consumer<Employee> tsa = employee -> System.out.println(employee.getName());
+        employees.stream().forEach(tsa);
+
+
+        // Supplier<Employee> for dummy employee
+        Supplier<Employee> sup = () -> new Employee(7, "Grace", 10, "HR", 45000, LocalDate.of(2021, 11, 8));
+
+        Employee employee = sup.get();
+
+        System.out.println(employee);
+
+        //Find second-highest salary employee
+        Employee employee1 = employees.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).skip(1).findFirst().get();
+        System.out.println(employee1);
+
+        //Find department with maximum employees
+        Optional<Map.Entry<String, Long>> max = employees.stream().collect(Collectors.groupingBy(Employee::getDepartmentName, Collectors.counting())).entrySet().stream().max(Map.Entry.comparingByValue());
+        System.out.println(max.get().getKey());
+
+        //Top 3 earners in the organization
+        List<Employee> limit = employees.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).limit(3).toList();
+        System.out.println(limit);
+
+        //Remove duplicate employees by name (keep first only)
+        Set<String> empset = new HashSet<>();
+        List<Employee> list13 = employees.stream().filter(emp -> empset.add(emp.getName())).toList();
+        System.out.println(list13);
+
+        //Print joining date in dd-MM-yyyy format
+        String dateFormate = "dd-MMM-yyyy";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormate);
+        employees.forEach(emp-> System.out.println(emp.getJoiningDate().format(formatter)));
+
+    }
 }
