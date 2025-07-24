@@ -1,0 +1,386 @@
+Java 8 Practice Questions for People Class
+Level 1 – Basic Stream Operations
+
+Print all people names.
+
+Get list of people whose salary > 50,000.
+
+Sort people by name alphabetically.
+
+Sort people by salary (descending).
+
+Remove duplicate people based on name.
+
+Convert List<People> to List<String> of names.
+
+Convert List<People> to Map<id, name>.
+
+Filter people who joined after 2021.
+
+Get all people living in city "Pune".
+
+Count people with salary below 40,000.
+
+Level 2 – Grouping, Aggregation, Transformation
+Group people by city → Map<String, List<People>>.
+
+Count people per city → Map<String, Long>.
+
+Average salary per city.
+
+Find city with the most residents.
+
+Find highest-paid person in each city.
+
+List cities with average salary > 60,000.
+
+Create Map<City, List<People>> sorted by city name.
+
+Partition people by salary > 60,000.
+
+Find duplicate names.
+
+Create a comma-separated string of all names.
+
+Get summary statistics (min, max, avg, sum, count) for salary.
+
+Join all people names in uppercase with commas.
+
+Sort people by city, then by name.
+
+Convert list of people names to a Set.
+
+List all people whose names start with "A".
+
+Check if any person earns more than 1,00,000.
+
+Check if all people are from the same city.
+
+Get list of cities sorted by number of people.
+
+Get all unique cities.
+
+Get person by ID using Optional (return "Unknown" if absent).
+
+Level 3 – Advanced Use Cases
+Find the second-highest salary person.
+
+Find all people with salary equal to the max salary.
+
+List top 3 highest-paid people.
+
+Get people who joined in the last 2 years.
+
+Count people in each city with salary > 50,000.
+
+Create Map<City, People> with the highest-paid person per city.
+
+Remove duplicate names, keeping only the first occurrence.
+
+Calculate total salary paid per city.
+
+Find youngest and oldest person by joining date.
+
+Partition people into before and after 2020 joining.
+
+Convert people list to TreeMap<City, Set<PeopleName>>.
+
+Check if any two people have the same salary.
+
+Get all names sorted in reverse alphabetical order.
+
+Create Map<Name, List<Salary>> for duplicate names.
+
+Find city with the lowest average salary.
+
+Convert list to LinkedHashMap (preserve insertion order).
+
+Group names by city into a comma-separated string.
+
+Get people whose salary is in the top 20%.
+
+Sort people by ID but keep only one entry per name.
+
+Return people with min and max salary in one pass.
+
+Create List<String> like "Alice - Pune", "Bob - Mumbai".
+
+Collect names of people whose salary is divisible by 10,000.
+
+Get person with the highest salary in "Pune".
+
+Create Map<PeopleId, People> keeping only the latest joined person for duplicate IDs.
+
+Get distinct salaries sorted in ascending order.
+
+Filter people whose name length > 5.
+
+Find common salaries among two different cities.
+
+Create Map<Year, List<People>> grouped by joining year.
+
+List people grouped by month of joining.
+
+Print names of people who joined on weekends.
+
+Get average salary of people whose names start with a vowel.
+
+Bonus – Functional Interface Practice
+Write Predicate<People> for salary > 50,000.
+
+Use Function<People, String> to return "name - city".
+
+Use Consumer<People> to print name and joining date.
+
+Create Supplier<People> for a dummy person.
+
+Chain two Consumer<People> using andThen().
+
+
+
+
+----------------------------------------------------------------------------------------------------------------
+
+Level 1 – Basic Stream Operations (20 Questions)
+Print all people names.
+
+Get a list of people whose salary is greater than 50,000.
+
+Sort people by name alphabetically.
+
+Sort people by salary descending.
+
+Remove duplicate people by name.
+
+Convert List<People> to List<String> of names.
+
+Convert List<People> to Map<id, name>.
+
+Filter people who joined after 2021.
+
+Get all people living in city "Pune".
+
+Count people with salary below 40,000.
+
+Convert all names to uppercase list.
+
+Check if any person earns more than 1 lakh.
+
+Check if all people belong to the same city.
+
+Find people whose names start with "A".
+
+Get distinct list of all city names.
+
+Get all salaries in a sorted list (no duplicates).
+
+Find all people younger than 30.
+
+Get names of all people sorted in reverse order.
+
+Convert all people names to a Set.
+
+Check if any person’s salary is divisible by 10,000.
+
+Level 2 – Grouping, Aggregation, Transformation (40 Questions)
+Group people by city → Map<String, List<People>>.
+
+Count people per city → Map<String, Long>.
+
+Average salary per city.
+
+Find the city with the most residents.
+
+Find the highest-paid person in each city.
+
+List cities with average salary > 60,000.
+
+Create Map<City, List<People>> sorted by city name.
+
+Partition people by salary > 60,000.
+
+Find duplicate names and group them.
+
+Create a comma-separated string of all names.
+
+Get summary statistics (min, max, avg, sum, count) for salary.
+
+Join all people names in uppercase with commas.
+
+Sort people by city, then by name.
+
+Find all unique joining years.
+
+Get a list of cities sorted by number of people.
+
+Get the top 3 cities by total salary paid.
+
+Find average age per city.
+
+Partition people by gender.
+
+Count people with salary > 60k grouped by city.
+
+Find the city with the highest average salary.
+
+Find all people who joined in the same month grouped together.
+
+Create Map<City, DoubleSummaryStatistics> for salaries.
+
+Get total salary per city.
+
+Count people per joining year.
+
+Group names by city as a comma-separated string.
+
+Find the department (city) with the lowest average salary.
+
+Get all unique joining months.
+
+Find the most common joining year.
+
+Find all people whose salary is a multiple of 15,000.
+
+Get all salaries grouped by city.
+
+Level 3 – Advanced Use Cases (50 Questions)
+Find the second-highest salary person.
+
+Find all people with salary equal to the max salary.
+
+List top 3 highest-paid people.
+
+Get people who joined in the last 2 years.
+
+Count people in each city with salary > 50,000.
+
+Create Map<City, People> with the highest-paid person per city.
+
+Remove duplicate names, keeping only the first occurrence.
+
+Return people with min and max salary in one pass.
+
+Find youngest and oldest person by joining date.
+
+Partition people into before and after 2020 joining.
+
+Convert people list to TreeMap<City, Set<Name>>.
+
+Check if any two people have the same salary.
+
+Get all names sorted in reverse alphabetical order.
+
+Create Map<Name, List<Salary>> for duplicate names.
+
+Sort people by joining date first, then salary descending.
+
+Get people whose salary is in the top 20%.
+
+Find all prime ages.
+
+Get a list of "Name (length)" for all people.
+
+Find the city with the lowest average salary.
+
+Find the city with the maximum number of people.
+
+Get all people who joined on weekends.
+
+Get average salary of people whose name starts with a vowel.
+
+Find all palindrome names (e.g., "Bob", "Anna").
+
+Get the median salary.
+
+Get 5 people with the lowest salaries.
+
+Find all unique salaries in descending order.
+
+Create Map<JoiningYear, List<People>> based on joining year.
+
+Create a LinkedHashMap of people preserving insertion order.
+
+Get all duplicate salaries grouped by salary.
+
+Find all people whose names contain the letter "e" (case-insensitive).
+
+Find the oldest person in each city.
+
+Find youngest female and youngest male.
+
+Find all people who joined before 2020.
+
+Create TreeMap<City, Set<Name>> where names are sorted.
+
+Get top 2 highest earners per city.
+
+Find people joined on a Monday.
+
+Partition people by those who joined after 2022 vs others.
+
+Get a Map<City, DoubleSummaryStatistics> for salary (min, max, avg, sum).
+
+Create Map<JoiningYear, Count> for people with salary > 60,000.
+
+Find the most common salary (mode).
+
+Get person with the earliest joining date overall.
+
+Find people with duplicate salaries and group them.
+
+Create Map<PeopleId, People> keeping only the latest joined person for duplicate IDs.
+
+Get distinct salaries sorted in ascending order.
+
+Find common salaries among two different cities.
+
+Find all people who joined in the same quarter.
+
+Find names of people grouped by first letter.
+
+Find people who joined during a leap year.
+
+Count people with salary divisible by 5,000.
+
+Get top 10% earners list.
+
+30 New Additional Questions (Advanced Filtering, Date & Misc)
+Get all female people earning more than 60,000.
+
+List people aged between 25 and 35, sorted by salary descending.
+
+Create a Map<City, AverageAge> for all people.
+
+Find the oldest person in each city.
+
+Get all people whose name contains "e" (case-insensitive).
+
+Find people who joined before 2020.
+
+Count males vs females → Map<String, Long>.
+
+Find all unique salaries in descending order.
+
+Create a Map<AgeGroup, List<People>> (<30, 30-40, >40).
+
+Get a comma-separated string of all people living in Mumbai.
+
+Find the average salary of people who joined in the last 3 years.
+
+Find the most common salary (mode).
+
+Find people with duplicate salaries, group by salary.
+
+Find the youngest female and youngest male.
+
+Find the total number of people per joining year.
+
+Find the person with the earliest joining date overall.
+
+Check if there’s anyone from Nagpur earning more than 50,000.
+
+Create a TreeMap<City, Set<Name>> where names are sorted.
+
+Get the 5 people with the lowest salaries.
+
+Find all people who joined on a Monday.
