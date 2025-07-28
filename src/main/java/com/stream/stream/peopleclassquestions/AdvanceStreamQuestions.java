@@ -8,7 +8,6 @@ import java.time.Month;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class AdvanceStreamQuestions {
     public static void main(String[] args) {
@@ -395,7 +394,7 @@ public class AdvanceStreamQuestions {
         System.out.println(collect20);
 
         //List people grouped by month of joining.
-        Map<Month, List<People>> collect21 = peopleList.stream().collect(Collectors.groupingBy(people3 -> people3.getJoiningDate().getMonth(),TreeMap::new,Collectors.toList()));
+        Map<Month, List<People>> collect21 = peopleList.stream().collect(Collectors.groupingBy(people3 -> people3.getJoiningDate().getMonth(), TreeMap::new, Collectors.toList()));
         System.out.println(collect21);
 
         //Print names of people who joined on weekends.
@@ -405,18 +404,200 @@ public class AdvanceStreamQuestions {
         }).map(People::getName).collect(Collectors.toList());
         System.out.println(collect22);
 
-      //Get average salary of people whose names start with a vowel.
+        //Get average salary of people whose names start with a vowel.
         List<Character> vowels = Arrays.asList('A', 'E', 'I', 'O', 'U');
         List<People> vowelNamePeople = peopleList.stream()
                 .filter(p -> vowels.stream()
-                        .anyMatch(v -> Character.toUpperCase(p.getName().charAt(0))== v))
+                        .anyMatch(v -> Character.toUpperCase(p.getName().charAt(0)) == v))
                 .toList();
         System.out.println(vowelNamePeople);
 
-        //
+        //Print all people names.
+        peopleList.stream().forEach(name -> System.out.println(name.getName()));
 
+        //Get a list of people whose salary is greater than 50,000.
+        List<People> list16 = peopleList.stream().filter(people3 -> people3.getSalary() > 50000).toList();
+        System.out.println(list16);
 
+        //Sort people by name alphabetically.
+        List<People> list17 = peopleList.stream().sorted(Comparator.comparing(People::getName)).toList();
 
+        //Sort people by salary descending.
+        List<People> list18 = peopleList.stream().sorted(Comparator.comparing(People::getSalary).reversed()).toList();
+        System.out.println(list18);
 
+        //Remove duplicate people by name.
+        HashSet<String> strings1 = new HashSet<>();
+        List<People> list19 = peopleList.stream().filter(people3 -> strings1.add(people3.getName())).toList();
+        System.out.println(list19);
+
+        //Convert List<People> to List<String> of names.
+        List<String> list20 = peopleList.stream().map(People::getName).toList();
+        System.out.println(list20);
+
+        //Convert List<People> to Map<id, name>.
+        Map<Integer, String> collect23 = peopleList.stream().collect(Collectors.toMap(
+                People::getId,
+                People::getName
+        ));
+        System.out.println(collect23);
+
+        //Filter people who joined after 2021.
+        List<People> list21 = peopleList.stream().filter(people3 -> people3.getJoiningDate().getYear() > 2021).toList();
+        System.out.println(list21);
+
+        //Get all people living in city "Pune"
+        List<People> pune1 = peopleList.stream().filter(people3 -> people3.getCity().equalsIgnoreCase("pune")).toList();
+        System.out.println(pune1);
+
+        //Count people with salary below 40,000.
+        List<People> list22 = peopleList.stream().filter(people3 -> people3.getSalary() < 40000).toList();
+        System.out.println(list22);
+
+        //Convert all names to uppercase list.
+        List<String> list23 = peopleList.stream().map(people3 -> people3.getName().toUpperCase()).toList();
+
+        //Check if any person earns more than 1 lakh.
+        boolean b3 = peopleList.stream().anyMatch(people3 -> people3.getSalary() > 100000);
+        System.out.println(b3);
+
+        //Check if all people belong to the same city.
+        boolean b4 = peopleList.stream().map(people3 -> people3.getCity()).distinct().count() == 1;
+        System.out.println(b4);
+
+        //Find people whose names start with "A".
+        List<People> a = peopleList.stream().filter(people3 -> people3.getName().startsWith("A")).toList();
+        System.out.println(a);
+
+        //Get distinct list of all city names.
+        List<String> list24 = peopleList.stream().map(People::getCity).distinct().toList();
+        System.out.println(list24);
+
+        //Get all salaries in a sorted list (no duplicates).
+        List<Double> list25 = peopleList.stream().map(People::getSalary).distinct().sorted().toList();
+        System.out.println(list25);
+
+        //Find all people younger than 30.
+        List<People> list26 = peopleList.stream().filter(people3 -> people3.getAge() < 30).toList();
+        System.out.println(list26);
+
+        //Get names of all people sorted in reverse order.
+        List<String> list27 = peopleList.stream().map(People::getName).sorted(Comparator.reverseOrder()).toList();
+        System.out.println(list27);
+
+        //Convert all people names to a Set.
+        Set<String> collect24 = peopleList.stream().map(People::getName).collect(Collectors.toSet());
+        System.out.println(collect24);
+
+        //Check if any person’s salary is divisible by 10,000.
+        boolean b5 = peopleList.stream().anyMatch(
+                people3 -> people3.getSalary() % 10000 == 0
+        );
+        System.out.println(b5);
+
+        //Group people by city → Map<String, List<People>>.
+        Map<String, List<People>> collect25 = peopleList.stream().collect(Collectors.groupingBy(People::getCity));
+        System.out.println(collect25);
+
+        //Count people per city → Map<String, Long>.
+        Map<String, Long> collect26 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.counting()));
+        System.out.println(collect26);
+
+        //Average salary per city.
+        Map<String, Double> collect27 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.summingDouble(People::getSalary)));
+        System.out.println(collect27);
+
+        //Find the city with the most residents.
+        Map.Entry<String, Long> stringLongEntry = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.counting())).entrySet().stream().max(Map.Entry.comparingByValue()).get();
+        System.out.println(stringLongEntry);
+
+        //Find the highest-paid person in each city.
+        Map<String, List<People>> collect28 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.collectingAndThen(Collectors.toList(), li -> li.stream().sorted(Comparator.comparing(People::getSalary)).toList())));
+        System.out.println(collect28);
+
+        //List cities with average salary > 60,000.
+        Map<String, Double> collect29 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.averagingDouble(People::getSalary))).entrySet().stream().filter(entry -> entry.getValue() > 60000).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        System.out.println(collect29);
+
+        //Create Map<City, List<People>> sorted by city name.
+        TreeMap<String, List<People>> collect30 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, TreeMap::new, Collectors.toList()));
+        System.out.println(collect30);
+
+        //Partition people by salary > 60,000.
+        Map<Boolean, List<People>> collect31 = peopleList.stream().collect(Collectors.partitioningBy(people3 -> people3.getSalary() > 60000));
+        System.out.println(collect31);
+
+        //Find duplicate names and group them.
+        Map<String, List<People>> collect32 = peopleList.stream().collect(Collectors.groupingBy(People::getName)).entrySet().stream().filter(entry -> entry.getValue().size() > 1).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        System.out.println(collect32);
+
+        //Create a comma-separated string of all names.
+        String collect33 = peopleList.stream().map(People::getName).collect(Collectors.joining(","));
+        System.out.println(collect33);
+
+        //Sort people by city, then by name.
+        List<People> list28 = peopleList.stream().sorted(Comparator.comparing(People::getCity).thenComparing(People::getName)).toList();
+        System.out.println(list28);
+
+        //Find all unique joining years.
+        List<Integer> list30 = peopleList.stream().map(people3 -> people3.getJoiningDate().getYear()).distinct().sorted().toList();
+        System.out.println(list30);
+
+        //Get a list of cities sorted by number of people.
+        List<Map.Entry<String, Long>> list29 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.counting())).entrySet().stream().sorted(Map.Entry.comparingByValue()).toList();
+        System.out.println(list29);
+
+        //or only for list
+        List<String> list31 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.counting())).entrySet().stream().sorted(Map.Entry.comparingByValue()).map(Map.Entry::getKey).toList();
+        System.out.println(list31);
+
+        //Get the top 3 cities by total salary paid.
+        List<String> list32 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.summingDouble(People::getSalary))).entrySet().stream().sorted(Map.Entry.<String,Double>comparingByValue().reversed()).limit(3).map(Map.Entry::getKey).toList();
+        System.out.println(list32);
+
+        //Find average age per city.
+        Map<String, Double> collect34 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.summingDouble(People::getSalary)));
+        System.out.println(collect34);
+
+        //Partition people by gender.
+        Map<Boolean, List<People>> male = peopleList.stream().collect(Collectors.partitioningBy(people3 -> people3.getGender().equalsIgnoreCase("male")));
+        System.out.println(male);
+
+        //Count people with salary > 60k grouped by city.
+        Map<String, Long> collect35 = peopleList.stream().filter(people3 -> people3.getSalary() > 60000).collect(Collectors.groupingBy(People::getCity, Collectors.counting()));
+        System.out.println(collect35);
+
+        //Find the city with the highest average salary.
+        String s4 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.averagingDouble(People::getSalary))).entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(null);
+        System.out.println(s4);
+
+        //Find all people who joined in the same month grouped together.
+        Map<Month, List<People>> collect36 = peopleList.stream().collect(Collectors.groupingBy(people3 -> people3.getJoiningDate().getMonth()));
+        System.out.println(collect36);
+
+        //Create Map<City, DoubleSummaryStatistics> for salaries.
+        Map<String, DoubleSummaryStatistics> collect37 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.summarizingDouble(People::getSalary)));
+        System.out.println(collect37);
+
+        //Get total salary per city.
+        Map<String, Double> collect38 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.summingDouble(People::getSalary)));
+        System.out.println(collect38);
+
+        //Count people per joining year.
+        Map<Integer, Long> collect39 = peopleList.stream().collect(Collectors.groupingBy(people3 -> people3.getJoiningDate().getYear(), Collectors.counting()));
+        System.out.println(collect39);
+
+         //Group names by city as a comma-separated string.
+        String collect40 = peopleList.stream().map(People::getCity).collect(Collectors.joining(","));
+        System.out.println(collect40);
+
+        //Find the department (city) with the lowest average salary.
+        Optional<String> s5 = peopleList.stream().collect(Collectors.groupingBy(People::getCity, Collectors.averagingDouble(People::getSalary))).entrySet().stream().min(Map.Entry.<String, Double>comparingByValue()).map(Map.Entry::getKey);
+        System.out.println(s5);
+
+        //Get all unique joining months.
+        List<Month> list33 = peopleList.stream().map(people3 -> people3.getJoiningDate().getMonth()).distinct().toList();
+        System.out.println(list33);
     }
+
 }
