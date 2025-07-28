@@ -15,10 +15,13 @@ import java.util.stream.Collectors;
 @SpringBootApplication
 public class StreamApplication {
 
+
     public static void main(String[] args) {
         //SpringApplication.run(StreamApplication.class, args);
 
         List<Employee> employees = new ArrayList<>();
+
+
 
         employees.add(new Employee(1, "Alice", 10, "HR", 55000, LocalDate.of(2020, 1, 15)));
         employees.add(new Employee(2, "Bob", 20, "Finance", 70000, LocalDate.of(2019, 3, 10)));
