@@ -220,3 +220,89 @@ Use Consumer<Employee> to print name and joining date.
 Create a Supplier<Employee> that returns a dummy employee.
 
 Chain two Consumer<Employee> using andThen().
+
+
+-----------------------------------
+
+Group employees by department and find the highest-paid employee in each department.
+
+From a list of people, find the youngest person per city.
+
+Group products by category and find the total revenue per category.
+
+Group a list of students by grade and collect only those who scored more than 80.
+
+Find the department with the highest average salary.
+
+Partition employees by whether they joined before or after 2020 and find average salaries in both groups.
+
+Group orders by customer and collect all product names into a single comma-separated string.
+
+Create a Map<City, List<Employee>> sorted by city name and sort employees in each list by salary (descending).
+
+For each department, find the employee with the earliest joining date.
+
+From a list of transactions, group by year and month, and count transactions per period.
+
+Sorting & Complex Reductions
+Find the top 3 highest-paid employees across all departments.
+
+Sort employees by salary (desc), then by name (asc) within the same salary.
+
+Find the employee whose salary is the median.
+
+Find the second-highest salary without using skip() or limit().
+
+Return a list of employees, removing duplicates by name but keeping the one with the highest salary.
+
+Sort transactions first by amount (desc) then by date (asc).
+
+Get the city with the lowest average salary.
+
+From a list of integers, return the three most frequent elements (most occurring).
+
+Find the longest word in a list of sentences (ignoring punctuation).
+
+Find the most common joining year among employees.
+
+Merging, Mapping & Advanced Collectors
+Merge two lists of employees, remove duplicates (by ID), and sort by name.
+
+Convert List<Employee> to Map<Department, List<String>> (department to employee names).
+
+From a list of students, create a Map<Grade, Double> with the average score per grade.
+
+Create a Map<Boolean, List<Employee>> partitioned by whether salary > 50,000.
+
+Merge salaries from multiple branches and sum them for each employee ID.
+
+Create a map where the key is joining year, and the value is a Set of cities employees joined from.
+
+Flatten a List<List<Integer>> into a sorted, distinct list.
+
+Combine multiple maps into one (handling duplicate keys by summing values).
+
+Convert Map<String, List<Employee>> to Map<String, Double> (average salary per city).
+
+Group numbers by even and odd, then return the sum for each group.
+
+Challenging Stream Transformations
+From a list of sentences, find the top 5 most frequent words.
+
+Remove duplicate words (case-insensitive) from a list of strings, preserving insertion order.
+
+Convert a list of file paths into a unique list of file extensions sorted alphabetically.
+
+For each employee, calculate their annual bonus as 10% of salary and return a Map<Name, BonusAmount>.
+
+From a list of numbers, create pairs (i, j) where i + j == target, without duplicates.
+
+Create a custom collector to concatenate strings with a delimiter and a prefix/suffix.
+
+Given a list of employees with multiple phone numbers, flatten into a single List<String> of all phone numbers.
+
+Implement a collector that counts frequency of each character in a string.
+
+Find all employees who have salaries in the top 10% of the company.
+
+Detect if a list contains any duplicates and return the duplicate elements.
