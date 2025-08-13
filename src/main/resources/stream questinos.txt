@@ -306,3 +306,162 @@ Implement a collector that counts frequency of each character in a string.
 Find all employees who have salaries in the top 10% of the company.
 
 Detect if a list contains any duplicates and return the duplicate elements.
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+level 3 questions
+-----------------------------------------------
+
+A. Grouping and Aggregation (1–15)
+Group employees by department and list all employees in each.
+
+Group employees by city and count how many employees per city.
+
+Group employees by department and get the total salary of each group.
+
+Group products by category and get the average price in each category.
+
+Group students by grade and count how many got above 80 marks.
+
+Group orders by customer name and get the total amount spent per customer.
+
+Group books by author and collect book titles into a list.
+
+Group employees by department, then get the employee with the highest salary in each.
+
+Group employees by city and department (multi-level grouping).
+
+Partition employees by whether their salary is greater than 50K, then count each group.
+
+Partition students by whether they passed (marks >= 40), then get average marks for both groups.
+
+Group invoices by month and calculate total billing per month.
+
+Group orders by status (Delivered, Pending, Cancelled) and count.
+
+Group files by extension and get the largest file in each group.
+
+Group products by manufacturer and sort the products in each group by price.
+
+🧹 B. Filtering, Sorting, and Deduplication (16–25)
+Get all employees with salary > 60K and age < 30.
+
+Find top 5 highest-paid employees across all departments.
+
+Find the employee with the earliest joining date.
+
+Get distinct department names in sorted order.
+
+From a list of projects with duplicate names, collect unique names.
+
+Sort employees by salary descending and then by name ascending.
+
+Get employees joined in the last 2 years and sort them by joining date.
+
+Filter out students who failed and sort them by total marks.
+
+Get top 3 customers with highest total purchases.
+
+Remove duplicate email addresses from a list and collect into sorted set.
+
+🧱 C. Mapping and FlatMapping (26–35)
+Flatten a list of lists of strings into a single list of strings.
+
+From a list of employees with multiple phone numbers, flatten all phone numbers into one list.
+
+Get all product names from a list of orders (each order has a list of product names).
+
+Convert a list of names into uppercase.
+
+Create a comma-separated string of all product names from a list.
+
+Get a map of employee ID to employee name.
+
+From a list of transactions, extract all transaction IDs.
+
+From a list of blog posts with multiple tags, flatten and get all unique tags.
+
+Map a list of file paths to just file names.
+
+Convert list of Employee objects to list of full names (first + last).
+
+🧮 D. Collectors and Reduction (36–45)
+Calculate the total salary of all employees.
+
+Get average age of all employees.
+
+Find the highest salary among all employees.
+
+Find the most expensive product.
+
+Count number of orders per product category.
+
+Find the longest word in a list of strings.
+
+From a list of strings, get the frequency of each word.
+
+Calculate the sum of squares of all numbers in a list.
+
+Get a comma-separated string of employee names.
+
+From a list of scores, get summary statistics (min, max, avg, sum).
+
+🔧 E. Real-World Use Cases & Tricks (46–50)
+From a list of customers and their orders, get a map of customer → total items purchased.
+
+From a map of <Department, List<Employee>>, find top performer per department.
+
+From attendance logs (employee, date), find who was present every weekday in the last week.
+
+Given a list of log entries, filter those with “ERROR” and collect timestamps.
+
+From list of employees, find those who fall in the top 10% by salary.
+
+--------------------------------------------------------------------
+
+🧠 Complex Stream API Questions for Practice
+✅ 1. Grouping + Filtering + Sorting
+Q: Group employees by department, then find top 3 highest-paid employees in each department.
+
+✅ 2. FlatMap + Grouping
+Q: Given a list of employees, each with multiple projects, flatten and group project names by city.
+
+✅ 3. Partitioning + Aggregation
+Q: Partition employees by those earning more than 50K. For both groups, calculate average and total salary.
+
+✅ 4. Multi-Level Grouping
+Q: Group employees by city and then by department. For each group, calculate total salary and count.
+
+✅ 5. Mapping + Reducing
+Q: From a list of products, group by category and calculate total price using reducing collector.
+
+✅ 6. CollectingAndThen + Deduplication
+Q: From a list of strings, remove duplicates, sort them, and collect into an unmodifiable list.
+
+✅ 7. Custom Collector
+Q: Create a custom collector to join names with delimiter ;, add prefix Names: and suffix .
+
+✅ 8. Sorting a Map by Value
+Q: `Create a map of department to total salary and sort it in descending order of salary.`
+
+✅ 9. Find the Most Frequent Element
+Q: From a list of employee names, find the name that appears most frequently.
+
+✅ 10. Conditional FlatMap
+Q: Given a list of employees, each with optional emergency contact numbers (List<Optional<String>>), flatten and collect all non-empty contact numbers.
+
+🧪 Bonus Real-World Scenarios
+📦 11. Orders Report
+Q: From a list of orders (with customer name, list of product names, and total), generate a map of customer name → total spent.
+
+🧾 12. Invoice Filtering
+Q: Filter invoices where due date is before today and amount > 10,000. Then sort by due date.
+
+📅 13. Attendance System
+Q: Given a list of attendance records (employeeId, date), find days each employee was absent in the current month.
+
+📊 14. Top Performer Per City
+Q: Group employees by city and get the employee with the highest performance score in each city.
+
+🔄 15. Dynamic Filtering
+Q: Given dynamic filters like salary > x, department = y, experience > z, filter employees based on the selected filters using stream chaining.
