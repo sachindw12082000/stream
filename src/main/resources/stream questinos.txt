@@ -219,7 +219,7 @@ Use Consumer<Employee> to print name and joining date.
 
 Create a Supplier<Employee> that returns a dummy employee.
 
-Chain two Consumer<Employee> using andThen().
+Chain two Consumer<Employee> using andThen()
 
 
 -----------------------------------
