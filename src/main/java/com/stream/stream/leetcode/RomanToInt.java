@@ -6,7 +6,6 @@ public class RomanToInt {
     public static void main(String[] args) {
         String romanNumber = "V";
         System.out.println(romanToInt(romanNumber));
-
     }
 
     public static int romanToInt(String s) {
