@@ -30,7 +30,6 @@ public class RomanToInt {
             }
             prev=curr;
         }
-
         return result;
     }
 }
