@@ -1,11 +1,14 @@
 package com.stream.stream;
 
 import com.stream.stream.entity.Employee;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -15,12 +18,10 @@ import java.util.stream.Collectors;
 @SpringBootApplication
 public class StreamApplication {
 
-
     public static void main(String[] args) {
-        //SpringApplication.run(StreamApplication.class, args);
+        SpringApplication.run(StreamApplication.class, args);
 
         List<Employee> employees = new ArrayList<>();
-
 
         employees.add(new Employee(1, "Alice", 10, "HR", 55000, LocalDate.of(2020, 1, 15)));
         employees.add(new Employee(2, "Bob", 20, "Finance", 70000, LocalDate.of(2019, 3, 10)));
@@ -211,6 +212,32 @@ public class StreamApplication {
         String dateFormate = "dd-MMM-yyyy";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormate);
         employees.forEach(emp-> System.out.println(emp.getJoiningDate().format(formatter)));
+        for (Employee employee2 : employees) {
+            System.out.println(employee2.getSalary());
+        }
+        Set<String> distinctEmployee = new HashSet<>();
+        employees.stream().filter(emp-> !distinctEmployee.add(emp.getName())).toList();
+
+        employees.stream().collect(Collectors.groupingBy(Employee::getName)).values().stream().filter(val-> val.size()>1).flatMap(List::stream).toList();
+
+        ExecutorService executorService = Executors.newFixedThreadPool(20);
+
+        for (int l=0; l<=5; l++){
+        executorService.submit(()->processPayment(10));
+        }
+
+        executorService.shutdown();
 
     }
+     public int returnAmount(int amount ){
+        return amount;
+    }
+
+
+    public static void processPayment(int amount){
+        System.out.println("printing payment"+amount);
+    }
+
+
+
 }
