@@ -212,10 +212,6 @@ public class StreamApplication {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormate);
         employees.forEach(emp-> System.out.println(emp.getJoiningDate().format(formatter)));
 
-
-
-
-
     }
      public int returnAmount(int amount ){
         return amount;
