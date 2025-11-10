@@ -238,6 +238,4 @@ public class StreamApplication {
         System.out.println("printing payment"+amount);
     }
 
-
-
 }
