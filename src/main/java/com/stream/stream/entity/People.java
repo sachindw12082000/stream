@@ -1,5 +1,4 @@
 package com.stream.stream.entity;
-
 import java.time.LocalDate;
 
 public class People {

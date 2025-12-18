@@ -1,3 +1,38 @@
+
+  ArrayList<People> peopleList = new ArrayList<>();
+        peopleList.add(new People(1, "Alice", 28, "Female", "Pune", 55000, LocalDate.of(2020, 1, 15)));   // Duplicate name later
+        peopleList.add(new People(2, "Bob", 35, "Male", "Mumbai", 70000, LocalDate.of(2019, 3, 10)));    // High salary
+        peopleList.add(new People(3, "Charlie", 24, "Male", "Pune", 40000, LocalDate.of(2021, 6, 25)));  // Mid salary
+        peopleList.add(new People(4, "David", 30, "Male", "Delhi", 45000, LocalDate.of(2018, 9, 12)));   // Same salary as Ivan later
+        peopleList.add(new People(5, "Eve", 29, "Female", "Mumbai", 95000, LocalDate.of(2020, 5, 5)));   // Top 3 salaries
+        peopleList.add(new People(6, "Frank", 31, "Male", "Delhi", 30000, LocalDate.of(2022, 2, 28)));   // Low salary
+        peopleList.add(new People(7, "Grace", 26, "Female", "Pune", 45000, LocalDate.of(2021, 11, 8)));  // Duplicate salary
+        peopleList.add(new People(8, "Heidi", 27, "Female", "Nagpur", 35000, LocalDate.of(2023, 4, 19))); // Recent joiner
+        peopleList.add(new People(9, "Ivan", 34, "Male", "Delhi", 45000, LocalDate.of(2017, 12, 1)));    // Duplicate salary with David
+        peopleList.add(new People(10, "Judy", 25, "Female", "Mumbai", 40000, LocalDate.of(2020, 8, 30))); // Same salary as Charlie
+        peopleList.add(new People(11, "Alice", 40, "Female", "Chennai", 50000, LocalDate.of(2019, 10, 14))); // Duplicate name
+        peopleList.add(new People(12, "Kevin", 38, "Male", "Hyderabad", 100000, LocalDate.of(2024, 3, 20))); // Highest salary
+        peopleList.add(new People(13, "Liam", 29, "Male", "Pune", 50000, LocalDate.of(2022, 12, 12)));    // Duplicate salary (Alice)
+        peopleList.add(new People(14, "Mia", 33, "Female", "Delhi", 75000, LocalDate.of(2023, 1, 5)));    // Top 3 salary
+        peopleList.add(new People(15, "Nina", 23, "Female", "Mumbai", 30000, LocalDate.of(2021, 2, 2)));  // Lowest salary
+        peopleList.add(new People(16, "Oscar", 35, "Male", "Pune", 62000, LocalDate.of(2018, 7, 19)));    // Above avg salary
+        peopleList.add(new People(17, "Paul", 32, "Male", "Chennai", 47000, LocalDate.of(2023, 5, 10)));  // Same salary as Quinn
+        peopleList.add(new People(18, "Quinn", 29, "Female", "Delhi", 47000, LocalDate.of(2023, 6, 11))); // Same salary as Paul
+        peopleList.add(new People(19, "Rita", 31, "Female", "Nagpur", 56000, LocalDate.of(2019, 9, 9)));  // Unique city
+        peopleList.add(new People(20, "Steve", 36, "Male", "Goa", 43000, LocalDate.of(2022, 4, 4)));      // Goa resident
+        peopleList.add(new People(21, "Tom", 37, "Male", "Delhi", 65000, LocalDate.of(2020, 10, 10)));    // High salary
+        peopleList.add(new People(22, "Uma", 34, "Female", "Mumbai", 72000, LocalDate.of(2021, 8, 18)));  // High salary
+        peopleList.add(new People(23, "Victor", 28, "Male", "Nagpur", 36000, LocalDate.of(2023, 2, 23))); // Recent joiner
+        peopleList.add(new People(24, "Wendy", 39, "Female", "Pune", 80000, LocalDate.of(2018, 5, 30)));  // Top earner in Pune
+        peopleList.add(new People(25, "Xander", 41, "Male", "Chennai", 42000, LocalDate.of(2019, 7, 1))); // Mid salary
+        peopleList.add(new People(26, "Yara", 30, "Female", "Mumbai", 50000, LocalDate.of(2022, 11, 12))); // Duplicate salary group
+        peopleList.add(new People(27, "Zane", 29, "Male", "Pune", 60000, LocalDate.of(2020, 9, 29)));     // Decent salary
+        peopleList.add(new People(28, "Ivy", 26, "Female", "Hyderabad", 47000, LocalDate.of(2021, 3, 16))); // Duplicate salary (Paul, Quinn)
+        peopleList.add(new People(29, "Oliver", 24, "Male", "Chennai", 30000, LocalDate.of(2023, 7, 20))); // Low salary
+        peopleList.add(new People(30, "Penny", 27, "Female", "Delhi", 85000, LocalDate.of(2024, 1, 10))); // Top salary, recent
+
+
+
 Java 8 Practice Questions for People Class
 Level 1 – Basic Stream Operations
 
@@ -384,3 +419,4 @@ Create a TreeMap<City, Set<Name>> where names are sorted.
 Get the 5 people with the lowest salaries.
 
 Find all people who joined on a Monday.
+

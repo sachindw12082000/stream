@@ -1,0 +1,336 @@
+
+List<Employee> employees = new ArrayList<>();
+
+        employees.add(new Employee(1L, "Sachin", "Waghmare", 28, 60000, "IT", "Male", "Pune",
+                Arrays.asList("Java", "Spring", "SQL"), LocalDate.of(2020, 5, 10),
+                5000, 4.5, "sachin@gmail.com", 4));
+
+        employees.add(new Employee(2L, "Amit", "Shah", 32, 85000, "Finance", "Male", "Mumbai",
+                Arrays.asList("Excel", "SAP"), LocalDate.of(2018, 3, 15),
+                8000, 4.2, "amit@gmail.com", 7));
+
+        employees.add(new Employee(3L, "Riya", "Jain", 26, 55000, "HR", "Female", "Delhi",
+                Arrays.asList("Communication", "Recruitment"), LocalDate.of(2021, 7, 5),
+                3000, 4.0, "riya.jain@gmail.com", 3));
+
+        employees.add(new Employee(4L, "Vikas", "Patil", 35, 95000, "IT", "Male", "Pune",
+                Arrays.asList("Java", "Microservices", "AWS"), LocalDate.of(2017, 11, 12),
+                10000, 4.8, "vikas.patil@gmail.com", 9));
+
+        employees.add(new Employee(5L, "Neha", "Kulkarni", 30, 70000, "Marketing", "Female", "Bangalore",
+                Arrays.asList("SEO", "Content Writing"), LocalDate.of(2019, 4, 20),
+                6000, 4.3, "neha.kulkarni@gmail.com", 6));
+
+        employees.add(new Employee(6L, "Suresh", "Shetty", 40, 120000, "Finance", "Male", "Mumbai",
+                Arrays.asList("Accounting", "Tax", "SAP"), LocalDate.of(2015, 1, 18),
+                15000, 4.6, "suresh.shetty@gmail.com", 12));
+
+        employees.add(new Employee(7L, "Priya", "Nair", 27, 65000, "IT", "Female", "Chennai",
+                Arrays.asList("JavaScript", "React", "UI/UX"), LocalDate.of(2020, 9, 1),
+                4500, 4.1, "priya.nair@gmail.com", 4));
+
+        employees.add(new Employee(8L, "Rohit", "More", 29, 50000, "Support", "Male", "Pune",
+                Arrays.asList("Ticketing", "Linux"), LocalDate.of(2022, 2, 25),
+                2000, 3.9, "rohit.more@gmail.com", 3));
+
+        employees.add(new Employee(9L, "Meera", "Joshi", 33, 78000, "Admin", "Female", "Hyderabad",
+                Arrays.asList("Operations", "Management"), LocalDate.of(2019, 6, 15),
+                7000, 4.4, "meera.joshi@gmail.com", 8));
+
+        employees.add(new Employee(10L, "Karan", "Deshmukh", 31, 90000, "IT", "Male", "Pune",
+                Arrays.asList("Java", "Spring Boot", "Kafka"), LocalDate.of(2018, 12, 10),
+                9000, 4.7, "karan.deshmukh@gmail.com", 7));
+
+        employees.add(new Employee(11L, "Sachin", "Kadam", 29, 60000, "IT", "Male", "Mumbai",
+                Arrays.asList("Java", "Docker"), LocalDate.of(2020, 5, 10),
+                5000, 4.0, "sachin.kadam@gmail.com", 3));
+
+        employees.add(new Employee(12L, "Anita", "Rao", 28, 70000, "Marketing", "Female", "Bangalore",
+                Arrays.asList("SEO", "Branding"), LocalDate.of(2019, 5, 10),
+                6000, 4.1, "anita.rao@gmail.com", 5));
+
+        employees.add(new Employee(13L, "Deepak", "Sharma", 45, 110000, "Operations", "Male", "Delhi",
+                null, LocalDate.of(2014, 6, 12),
+                12000, 4.3, "deepak.sharma@gmail.com", 15));
+
+        employees.add(new Employee(14L, "Swapnil", "Jadhav", 25, 40000, "Support", "Male", "Pune",
+                Collections.emptyList(), LocalDate.of(2023, 2, 5),
+                1500, 3.5, "swapnil.jadhav@gmail.com", 2));
+
+        employees.add(new Employee(15L, "Mahesh", "Kale", 38, 180000, "Management", "Male", "Mumbai",
+                Arrays.asList("Leadership", "Strategy"), LocalDate.of(2012, 9, 1),
+                20000, 4.9, "mahesh.kale@gmail.com", 18));
+
+        employees.add(new Employee(16L, "Pooja", "Shinde", 24, 30000, "Support", "Female", "Pune",
+                Arrays.asList("Customer Service"), LocalDate.of(2023, 6, 1),
+                1000, 3.2, "pooja.shinde@gmail.com", 1));
+
+        employees.add(new Employee(17L, "Harish", "Mehta", 50, 160000, "Finance", "Male", "Mumbai",
+                Arrays.asList("Audit", "Compliance"), LocalDate.of(2008, 4, 15),
+                25000, 4.4, "harish.mehta@gmail.com", 20));
+
+        employees.add(new Employee(18L, "Sneha", "Desai", 29, 85000, "HR", "Female", "Pune",
+                Arrays.asList("Recruitment", "Payroll"), LocalDate.of(2020, 8, 10),
+                7000, 4.2, "sneha.desai@gmail.com", 5));
+
+        employees.add(new Employee(19L, "Vinay", "Kulkarni", 33, 95000, "IT", "Male", "Hyderabad",
+                Arrays.asList("Java", "Microservices"), LocalDate.of(2017, 3, 20),
+                9000, 4.8, "vinay.kulkarni@gmail.com", 10));
+
+        employees.add(new Employee(20L, "Vikas", "Patil", 35, 95000, "IT", "Male", "Pune",
+                Arrays.asList("Java", "Microservices", "AWS"), LocalDate.of(2017, 11, 12),
+                10000, 4.8, "vikas.patil@gmail.com", 9));
+
+
+
+
+
+
+✅ LEVEL 1 — BASIC JAVA 8 STREAM QUESTIONS (30 QUESTIONS)
+
+(Filtering, Mapping, Sorting Basics)
+
+1. Print all employee first names using stream().
+2. Print all unique cities where employees live.
+3. Find all employees who live in Pune.
+4. Find all female employees.
+5. Find employees whose salary is greater than 70,000.
+6. Get a list of all employee emails.
+7. Sort employees by first name in ascending order.
+8. Sort employees by salary in descending order.
+9. Find employees who joined after 2020.
+10. Get all departments (with duplicates).
+11. Get distinct departments.
+12. Count how many employees belong to IT department.
+13. Find all employees older than 30.
+14. Extract list of all skills from all employees (flatMap).
+15. Find employees who have “Java” as a skill.
+16. Find the employee with the maximum salary.
+17. Find the employee with the minimum salary.
+18. Convert List<Employee> into a Map<Id, Employee>.
+19. Convert List<Employee> into a Map<Department, List<Employee>>.
+20. Print full names (first + last).
+21. Get employees whose bonus is greater than 9000.
+22. Get employees who joined before 2018.
+23. Count how many employees have rating above 4.5.
+24. Create a list of employee ages.
+25. Get employee names who have empty or null skills.
+26. Get employee names who live in Mumbai and work in Finance.
+27. Sort employees by join date (oldest first).
+28. Sort employees by join date (newest first).
+29. Find employees whose lastname starts with “K”.
+30. Display all employees whose skills contain more than 2 items.
+✅ LEVEL 2 — INTERMEDIATE JAVA 8 QUESTIONS (35 QUESTIONS)
+
+(Grouping, Partitioning, Reduction, Aggregation)
+
+31. Group employees by department.
+32. Group employees by city.
+33. Group employees by gender.
+34. Count number of employees in each department.
+35. Find the average salary of each department.
+36. Find the highest salary in each department.
+37. Find the lowest salary in each department.
+38. Find the sum of salaries of all employees.
+39. Find the sum of salaries grouped by gender.
+40. Count how many employees have Java skill.
+41. Get each city and list max salary employee living in that city.
+42. Partition employees based on salary > 80,000.
+43. Partition employees based on rating > 4.5.
+44. Find the total bonus distributed by company.
+45. Create a Map<Department, Total Bonus>.
+46. Get the most experienced employee per department.
+47. Group employees by year of joining.
+48. Find top 3 highly paid employees.
+49. Find bottom 3 lowest paid employees.
+50. Get distinct skill list from all employees.
+51. Count employees for each skill (skill → count).
+52. Find employees whose skill list contains "AWS" or "Kafka".
+53. Group employees by number of skills they have.
+54. Find average rating of IT employees.
+55. Create a Map<City, Average Bonus>.
+56. Create a Map<Boolean, List<Employee>> → true if salary > rating * 20000.
+57. Get top 5 employees based on bonus.
+58. Sort employees by multiple fields: dept → salary desc → name.
+59. Create comma-separated string of all employee emails.
+60. Find second highest salary employee.
+61. Find second lowest salary employee.
+62. Get employees with exactly 3 skills.
+63. Get employees having the same salary.
+64. Create Map<Department, Count of Employees With Rating > 4>.
+65. Find employee with longest first name.
+✅ LEVEL 3 — ADVANCED JAVA 8 QUESTIONS (35 QUESTIONS)
+
+(Complex logic, multi-step transformations, real interview level)
+
+66. Remove duplicates from employee list using stream distinct().
+67. Remove duplicates based on firstName + lastName combination.
+68. Sort employees by skill count, then rating, then salary.
+69. Find the employee whose name appears more than once.
+70. Find employees earning above department average salary.
+71. Find employees earning below department average salary.
+72. Find median salary of all employees.
+73. Find median salary per department.
+74. Find employee who joined earliest but has rating < 4.
+75. Find employees having at least one common skill with “Vikas Patil”.
+76. Create Map<Skill, List<Employee>> (reverse mapping).
+77. Find employee pairs who have same salary.
+78. Find employee pairs who have same department and same rating.
+79. Sort employees inside each department by salary.
+80. Get top-rated employee from each city.
+81. Find unique skills sorted alphabetically.
+82. Get average age of employees per city.
+83. Find employees whose skill count is greater than skill count of "Vikas".
+84. Sort employees by age difference from employee with ID 1.
+85. Find next highest salary employee after Karan.
+86. Create a nested map → Department → City → List<Employee>.
+87. Create Map<JoiningYear, Set<Skills>>.
+88. Find the total experience (years) of all IT employees combined.
+89. Find youngest employee in each department.
+90. Find oldest employee in each city.
+91. Group employees by department and find average rating.
+92. Find employees with palindromic first names (“level”, “madam”).
+93. Get top 3 employees by salary per department.
+94. Compare salaries of Pune vs Mumbai employees.
+95. Create Map<Boolean, Employees> → true if skills ≥ 2 AND rating > 4.
+96. From each department, find employee whose name is lexicographically smallest.
+97. Determine if all employees have non-null email.
+98. Check if any employee has rating < 3.
+99. Find employee having maximum skill length (skill string characters).
+100. Create Map<City, Map<Department, Average Salary>>>.
+--------------------------------------------------------------------------------------------
+101. Find employees whose salary is within ±10% of the department’s average salary.
+102. Sort employees by: dept → city → rating desc → bonus desc → age asc.
+103. Find employees whose skill list shares at least two skills with Karan.
+104. Find employees having skill names longer than the average skill name length.
+105. Find employees who joined in the same month as “Neha Kulkarni”.
+106. Find employees whose email domain occurs more than once.
+107. Find employees whose bonus is in the top 20% of the company.
+108. Remove employees whose skills overlap more than 50% with their department average skillset.
+109. Sort employees by closeness of salary to 75,000.
+110. Find employees whose experience is within ±2 years of “Mahesh Kale”.
+111. Find employees where (rating * bonus) > salary.
+112. Find employees who have no skill starting with any vowel.
+113. Find employees whose firstname has duplicate characters (e.g., “Priya”).
+114. Find employees whose lastname has at least 3 consonants in a row.
+115. Find employees whose city name length is a prime number.
+116. Sort employees by descending number of vowels in full name.
+117. Identify employees having skill names that form palindromes when reversed.
+118. Find employees whose joining date is on a weekend.
+119. Find employees who joined on the same date (duplicate joining dates).
+120. Find employees whose rating is in the top 10% of the company.
+🔥 B. Multi-Level Grouping, Partitioning & Aggregation (25 Questions)
+121. Group employees by department → experience bracket (0–3, 4–7, 8+).
+122. Group employees by age decade (20s, 30s, 40s, 50s).
+123. Group employees by city → gender → skill count.
+124. Group employees by first letter of firstname → sort each group by salary.
+125. Generate summary: dept → average bonus → average salary → count.
+126. Partition employees based on whether any skill contains digits.
+127. Partition employees into: high-performers (>4.5), mid (4–4.5), low (<4).
+128. Find median salary per city.
+129. Find mode (most frequent) salary across all employees.
+130. Group employees by skill count → sort each bucket by bonus.
+131. Partition employees by whether their salary equals department max salary.
+132. Group employees by year → find employee with lowest rating each year.
+133. Group employees by department and find standard deviation of salary.
+134. Group employees by city and compute median rating.
+135. Partition employees by whether skills include any cloud tech (AWS, Azure, GCP).
+136. Generate: dept → total salary → highest bonus → lowest bonus.
+137. Count number of employees grouped by email domain.
+138. Group employees by age bucket (5-year ranges).
+139. Group employees by month of joining → list employees sorted by rating.
+140. Group employees by salary range: (0–50k, 50–100k, 100–150k, >150k).
+141. Group employees by character length of fullname.
+142. Partition employees by whether their lastname appears more than once.
+143. Group employees by city and identify skills unique to each city.
+144. Group employees by department and find employee whose bonus is closest to the department average.
+145. Group employees by gender and return top 3 salaries for each.
+🔥 C. Heavy Transformation & Reduction Based (25 Questions)
+146. Create a Map<Skill, Total Salary of Employees Having That Skill>.
+147. Create a sorted Map<Skill, Average Rating>.
+148. Compute global skill usage frequency normalized by employee count.
+149. Find salary distribution percentiles (10th, 25th, 50th, 75th, 90th).
+150. Compute weighted rating for employees where weight = experience.
+151. Build Map<City, Map<Skill, Count>>.
+152. Generate cumulative salary growth chart based on joining year.
+153. Create a Map<EmployeeName, TotalSkillCharacterCount>.
+154. Build a nested map: Dept → Rating Bucket → Avg Salary.
+155. Find total number of unique characters used in all skills.
+156. Build Map<Department, List<Employees Sorted by Experience Desc>>.
+157. Compute the salary-to-bonus ratio for all employees and sort.
+158. Find sum of squares of all employee ages (analytics problem).
+159. Build Map<Year, Count of New Skills Introduced>.
+160. Create a flat frequency list of all letters used in all skills.
+161. Determine which skill contributes the highest salary pool.
+162. Determine which department has the highest skill diversity.
+163. Compute longest chain of employees sorted by experience.
+164. Compute average age weighted by rating for IT department.
+165. Calculate the Gini coefficient of salary inequality (advanced math).
+🔥 D. Enterprise-Level Scenario & Logic Questions (25 Questions)
+
+(Very high difficulty—asked in product companies & system design)
+
+166. Find employees who would qualify for promotion if:
+
+salary > dept_avg AND rating > dept_avg_rating AND experience > 5.
+
+167. Recommend mentors from employees with:
+
+experience > 10 AND rating > 4.5.
+
+168. Build a compatibility matrix of employees based on shared skills and rating similarity.
+169. Predict next year salary using linear regression with streams.
+170. Detect employees whose performance (rating) dropped after salary increase.
+171. Find employees who are outliers using salary z-score.
+172. Determine knowledge gaps per department (missing skills compared to global skills list).
+173. Build a leadership score:
+
+(experience * rating) / age.
+
+174. Identify underpaid employees:
+
+salary < (department_avg - 15%).
+
+175. Identify overpaid employees:
+
+salary > (department_avg + 25%).
+
+176. Determine attrition risk score using weighted metrics (rating, salary, experience).
+177. Generate a succession pipeline for each department (top 3 experienced).
+178. Predict departments with low hiring trend using joining year patterns.
+179. Compute correlation between age and salary using stream-based math.
+180. Compute correlation between experience and rating.
+181. Find employees whose email username matches any part of their fullname.
+182. Identify cross-functional employees (skills belong to more than 1 department category).
+183. Build a heatmap: City → Department → Employee Count.
+184. Evaluate hiring quality:
+
+% of employees with rating > 4.0 per joining year.
+
+185. Build similarity groups using Levenshtein distance on employee names.
+186. Find employees whose skill proficiency can be inferred from tenure + skill count.
+187. Find employees expected to retire within X years and compute replacement cost.
+188. Compute optimal team pairing based on complementary skills.
+189. Identify city with maximum salary variance.
+190. Build department talent velocity score:
+
+(avg_rating * avg_experience) / avg_age.
+
+191. Identify toxic clusters: groups with majority rating < 3.5.
+192. Compute skill rarity index:
+
+1 / (#employees with that skill).
+
+193. Build employee-to-skill bipartite adjacency list.
+194. Identify employees with highest normalized performance:
+
+rating / salary.
+
+195. Compute time-to-productivity estimate using age + experience metrics.
+196. Build Map<Gender, Avg Salary Growth Rate>.
+197. Identify influential employees using PageRank-like algorithm on shared skills.
+198. Identify potential attrition candidates using salary vs. skills mismatch.
+199. Create Map<City, Sorted Employees by (experience + rating)>
+200. Identify future leaders:
+
+rating > 4.7 AND experience > 7 AND age < 35.
